@@ -22,7 +22,6 @@ export default class App extends Component {
     var timer = setInterval(()=>{
       getPosition(obj)
       .then(data=>{
-        console.log(data.data)
         this.setState({
           bus: data.data,
           contador: false

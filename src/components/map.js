@@ -22,14 +22,18 @@ class ReactLeafletMap extends PureComponent {
 
   componentWillReceiveProps(next){
 
-    next.bus.map(data => {
-      this.setState({
-        existe: true,
-        position: next.bus
-      })
+    if(next.bus.length){
+      next.bus.map(data => {
+        this.setState({
+          existe: true,
+          position: next.bus
+        })
+        return null
+      })  
+    }else{
+      this.setState({existe: false})
       return null
-    })
-
+    }
   }
 
 
@@ -53,7 +57,7 @@ class ReactLeafletMap extends PureComponent {
                         <span>{"teste"}</span>
                       </Popup>
                     </Marker>
-                  )
+                  )            
                 })
               ) 
               : 
