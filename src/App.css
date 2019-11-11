@@ -3,6 +3,7 @@
   background: #ffff;
   font-family: sans-serif;
   height: 100vh;
+  overflow: hidden;
 }
 
 header{
