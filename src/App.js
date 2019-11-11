@@ -81,7 +81,7 @@ export default class App extends Component {
           <Sidebar setCoord = {this.setCoord} open = {open} isMenuOpen = {this.isMenuOpen} sendToMap = {this.sendToMap} />
         </div>
 
-        <div>
+        <div className="ReactLeafletMap" >
           <ReactLeafletMap mapLatLong = {mapLatLong} bus = {bus}/>
         </div>
         

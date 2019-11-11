@@ -1,13 +1,14 @@
-html,
-body {
+.body {
   margin: 0;
   background: #ffff;
   font-family: sans-serif;
+  height: 100vh;
 }
 
 header{
   background: #2d3943;
   color: #f0f0f0;
+  height: 6.5vh;
 }
 
 #menuItem{
@@ -17,6 +18,10 @@ header{
 #App {
   font-family: sans-serif;
   height: 100vh;
+}
+
+.ReactLeafletMap{
+  height: 93.5vh;
 }
 
 .bm-burger-button{
