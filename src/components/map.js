@@ -2,8 +2,11 @@ import React, { PureComponent } from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 export const mapConfig = {
-  center: [-19.0123457, -57.6018532],
-  zoom: 17
+  corumba: [-19.0112454,-57.6523608],
+  ladario: [-19.0151184,-57.6075943],
+  inicio: [-19.0191279,-57.6322559],
+  center: [-19.0191279,-57.6322559],
+  zoom: 14
 };
 
 export var bole = false
@@ -15,12 +18,21 @@ class ReactLeafletMap extends PureComponent {
     super(props)
     this.state = {
       position: [],
-      inicio: [-19.009769, -57.654621],
+      centerAfter: [-19.0123457, -57.6018532],
       existe: false
     }
   }
 
   componentWillReceiveProps(next){
+    if(next.mapLatLong.sending){ 
+      if (next.mapLatLong.nome === "corumba"){
+        mapConfig.center = mapConfig.corumba
+      }else if (next.mapLatLong.nome === "ladario"){
+        mapConfig.center = mapConfig.ladario
+      }
+    }else{
+      mapConfig.center = mapConfig.inicio
+    }
 
     if(next.bus.length){
       next.bus.map(data => {

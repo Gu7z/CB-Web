@@ -8,10 +8,14 @@ export default class Sidebar extends Component{
 
   render(){
     return (
-      <Menu customBurgerIcon={
-          <MenuIcon id="menuItem"/>
-      }>
-        <NestedList sendToMap = {this.props.sendToMap} />        
+      <Menu 
+        onStateChange={ this.props.isMenuOpen } 
+        isOpen={ this.props.open } 
+        customBurgerIcon={
+            <MenuIcon id="menuItem"/>
+        }
+      >
+        <NestedList setCoord = {this.props.setCoord} sendToMap = {this.props.sendToMap} />        
       </Menu>
     );
   }

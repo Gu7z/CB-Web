@@ -2,13 +2,12 @@ html,
 body {
   margin: 0;
   background: #ffff;
+  font-family: sans-serif;
 }
 
 header{
   background: #2d3943;
   color: #f0f0f0;
-  height: 9vh;
-  justify-content: space-around;
 }
 
 #menuItem{
@@ -20,39 +19,16 @@ header{
   height: 100vh;
 }
 
-#page-wrap {
-  text-align: center;
-  overflow: auto;
-  display: block;
-}
-
-#example-map{
-  height: 500px;
-}
-
-
-.bm-item {
-  display: inline-block;
-  text-decoration: none;
-  margin-bottom: 10px;
-  color: #d1d1d1;
-  transition: color 0.2s;
-}
-
-.bm-item:hover {
-  color: white;
-}
-
-.bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 15px;
+.bm-burger-button{
+  display: none;
 }
 
 .bm-burger-bars {
   background: #373a47;
+}
+
+.bm-burger-bars-hover {
+  background: #a90000;
 }
 
 .bm-cross-button {
@@ -64,10 +40,15 @@ header{
   background: #bdc3c7;
 }
 
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
 .bm-menu {
   background: #373a47;
   padding: 2.5em 1.5em 0;
-  font-size: 1.5em;
+  font-size: 1.15em;
 }
 
 .bm-morph-shape {
@@ -76,6 +57,11 @@ header{
 
 .bm-item-list {
   color: #b8b7ad;
+  padding: 0.8em;
+}
+
+.bm-item {
+  display: inline-block;
 }
 
 .bm-overlay {

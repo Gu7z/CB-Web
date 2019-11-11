@@ -27,8 +27,10 @@ export default function NestedList(props) {
   function handleClick(escolha) {
     if(escolha){
       setCorumbaOpen(!corumba)
+      props.setCoord("corumba", true)
     }else{
       setLadarioOpen(!ladario)
+      props.setCoord("ladario", true)
     }
   }
 

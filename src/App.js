@@ -11,8 +11,27 @@ export default class App extends Component {
     this.state = {
       bus:[],
       contador: false,
-      anterior: ""
+      anterior: "",
+      open: false,
+      title: {
+        fontWeight: 'bold'
+      },
+      mapLatLong: []
     }
+  }
+
+  setCoord = (nome, sending) => {
+    this.setState({mapLatLong: {nome, sending}})
+  }
+
+  isMenuOpen = (state) => {
+      if (!state.isOpen) {
+        this.setOpen(false)
+      }
+    }
+
+  setOpen = (bool) => {
+    this.setState({open: bool})
   }
 
   sendToMap = (obj) => {
@@ -34,21 +53,39 @@ export default class App extends Component {
   }
 
   render(){
-    const { bus } = this.state
+    const { bus, open, title, mapLatLong } = this.state
     return (
-      <div id="App">
+      <div className="body">
         <header>
-          <div id='item'>
-            <Sidebar sendToMap = {this.sendToMap} />
-          </div>
-          <div id="page-wrap">
-            <h2>CheckBus - A melhor opção para achar o seu busão</h2>
-          </div>
-        </header>
-        <div>
-          <ReactLeafletMap bus = {bus}/>
+          <nav className="navbar navbar-dark bg-dark">
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    onClick={()=>{
+                      this.setOpen(!open)
+                    }}
+                  >
+                    <span className="navbar-toggler-icon"></span>
+            </button> 
+            <div className="row">
+              <h4 className="title" style = {title}>
+                CheckBus
+              </h4>
+              <h4 className ="d-none d-md-block" style = {title}>
+              &nbsp;-&nbsp;A melhor opção para achar o seu busão
+              </h4>
+            </div>
+              &nbsp;
+          </nav>
+        </header>   
+        
+        <div id='item'>
+          <Sidebar setCoord = {this.setCoord} open = {open} isMenuOpen = {this.isMenuOpen} sendToMap = {this.sendToMap} />
         </div>
-      </div>      
+
+        <div>
+          <ReactLeafletMap mapLatLong = {mapLatLong} bus = {bus}/>
+        </div>
+        
+      </div>
     );
   }
 }
