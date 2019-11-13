@@ -3,7 +3,7 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 export const mapConfig = {
   corumba: [-19.0112454,-57.6523608],
-  ladario: [-19.0159716,-57.6134315],
+  ladario: -19.0162272,-57.6048325],
   inicio: [-19.0191279,-57.6322559],
   center: [-19.0191279,-57.6322559],
   zoom: 14
@@ -30,7 +30,7 @@ class ReactLeafletMap extends PureComponent {
         mapConfig.zoom = 14
       }else if (next.mapLatLong.nome === "ladario"){
         mapConfig.center = mapConfig.ladario
-        mapConfig.zoom = 14.5
+        mapConfig.zoom = 14.75
       }
     }else{
       mapConfig.center = mapConfig.inicio
