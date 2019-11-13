@@ -30,7 +30,7 @@ class ReactLeafletMap extends PureComponent {
         mapConfig.zoom = 14
       }else if (next.mapLatLong.nome === "ladario"){
         mapConfig.center = mapConfig.ladario
-        mapConfig.zoom = 15
+        mapConfig.zoom = 14.5
       }
     }else{
       mapConfig.center = mapConfig.inicio
