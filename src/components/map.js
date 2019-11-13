@@ -3,7 +3,7 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 export const mapConfig = {
   corumba: [-19.0112454,-57.6523608],
-  ladario: -19.0162272,-57.6048325],
+  ladario: [-19.0162272,-57.6048325],
   inicio: [-19.0191279,-57.6322559],
   center: [-19.0191279,-57.6322559],
   zoom: 14
