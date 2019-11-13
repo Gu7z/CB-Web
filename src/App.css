@@ -4,6 +4,8 @@
   font-family: sans-serif;
   height: 100vh;
   overflow: hidden;
+  display:flex;
+  flex-direction: column;
 }
 
 header{
@@ -21,7 +23,7 @@ header{
 }
 
 .ReactLeafletMap{
-  height: 93.5vh;
+  height: 100%;
 }
 
 .bm-burger-button{
