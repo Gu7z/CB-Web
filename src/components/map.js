@@ -54,8 +54,8 @@ class ReactLeafletMap extends PureComponent {
   render() {
     const { existe, position } = this.state
     return (
-      <div className="map">
-        <Map style={{ height: "93.5vh" }} center={mapConfig.center} zoom={mapConfig.zoom} className="map__reactleaflet">
+      <div className="ReactLeafletMap">
+        <Map className="ReactLeafletMap" center={mapConfig.center} zoom={mapConfig.zoom} className="map__reactleaflet">
           <TileLayer
             url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
             attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
